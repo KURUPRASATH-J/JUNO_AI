@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUNO AI </title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body data-theme="light">
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="juno.jpg" alt="Juno Logo" class="logo-image">
+                    <h1>JUNO AI</h1>
+                </div>
+                <div class="header-actions">
+                    <button class="btn-secondary" id="memoryBtn">
+                        <i class="fas fa-brain"></i> Memory
+                    </button>
+                    <button class="btn-secondary" id="clearBtn">
+                        <i class="fas fa-broom"></i> Clear
+                    </button>
+                    <button class="btn-secondary" id="themeToggleBtn">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="btn-secondary" id="conversationsBtn">
+                        <i class="fas fa-bars"></i> Menu
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="chat-container">
+                <!-- Chat Header -->
+                <div class="chat-header">
+                    <div class="status-indicator">
+                        <span class="status-dot active"></span>
+                        <span>JUNO AI is Ready</span>
+                    </div>
+                    <div class="document-status" id="documentStatus">
+                        <i class="fas fa-file-pdf" style="color: var(--text-muted);"></i>
+                        <span>No documents loaded</span>
+                    </div>
+                </div>
+
+                <!-- Messages Container -->
+                <div class="messages-container" id="messagesContainer">
+                    <div class="welcome-message" id="welcomeMessage">
+                        <div class="welcome-icon">
+                            <img src="juno logo.jpg" alt="Juno Logo" class="welcome-logo">
+                        </div>
+                        <h2>Welcome to JUNO AI</h2>
+                        <p>Upload documents, ask questions, or start a conversation!</p>
+
+                        <div class="feature-grid">
+                            <div class="feature-item">
+                                <i class="fas fa-file-upload"></i>
+                                <span>Upload PDFs</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-brain"></i>
+                                <span>Smart Memory</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-globe"></i>
+                                <span>Web Scraping</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-microphone"></i>
+                                <span>Voice Input</span>
+                            </div>
+                        </div>
+
+                        <!-- Quick Actions -->
+                        <div class="quick-actions">
+                            <button class="quick-btn" onclick="chatbot.fillInput('Summarize this document')">
+                                <i class="fas fa-file-text"></i> Summarize Doc
+                            </button>
+                            <button class="quick-btn" onclick="chatbot.fillInput('Extract key insights from this content')">
+                                <i class="fas fa-lightbulb"></i> Key Insights
+                            </button>
+                            <button class="quick-btn" onclick="chatbot.fillInput('What is the main topic of this document?')">
+                                <i class="fas fa-bullseye"></i> Main Topic
+                            </button>
+                            <button class="quick-btn" onclick="chatbot.fillInput('List the important points mentioned')">
+                                <i class="fas fa-list"></i> Key Points
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Input Area -->
+                <div class="input-area">
+                    <div class="message-input-container">
+                        <div class="input-wrapper">
+                            <div class="input-actions-left">
+                                <button class="action-btn upload-btn" id="attachBtn" title="Upload PDF">
+                                    <i class="fas fa-paperclip"></i>
+                                </button>
+                                <button class="action-btn scrape-btn" id="scrapeBtn" title="Scrape Website">
+                                    <i class="fas fa-globe"></i>
+                                </button>
+                                <button class="action-btn voice-btn" id="voiceBtn" title="Voice Input">
+                                    <i class="fas fa-microphone"></i>
+                                </button>
+                            </div>
+                            <div class="input-field-wrapper">
+                                <textarea id="messageInput" placeholder="Type your message... (Shift+Enter for new line)" rows="1"></textarea>
+                            </div>
+                            <div class="input-actions-right">
+                                <button class="action-btn send-btn" id="sendBtn">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar for Conversations -->
+            <div class="sidebar" id="sidebar">
+                <div class="sidebar-header">
+                    <h3>Conversations</h3>
+                    <button class="btn-icon" id="closeSidebarBtn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="sidebar-content">
+                    <div class="sidebar-actions">
+                        <button class="btn-secondary" id="newConvBtn">
+                            <i class="fas fa-plus"></i> New Conversation
+                        </button>
+                        <button class="btn-secondary" id="saveConvBtn">
+                            <i class="fas fa-save"></i> Save Current
+                        </button>
+                    </div>
+                    <div class="conversations-list" id="conversationsList">
+                        <!-- Conversations will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Voice Modal -->
+        <div class="voice-modal" id="voiceModal">
+            <div class="voice-content">
+                <div class="voice-animation">
+                    <div class="voice-wave"></div>
+                    <div class="voice-wave"></div>
+                    <div class="voice-wave"></div>
+                    <div class="voice-wave"></div>
+                    <div class="voice-wave"></div>
+                </div>
+                <div class="voice-title">Listening...</div>
+                <div class="voice-subtitle">Speak clearly into your microphone</div>
+                <button class="stop-voice-btn" id="stopVoiceBtn">
+                    <i class="fas fa-stop"></i> Stop Recording
+                </button>
+            </div>
+        </div>
+
+        <!-- Memory Modal -->
+        <div class="modal" id="memoryModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Memory & Session Data</h3>
+                    <button class="btn-icon" id="closeModalBtn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="memoryContent">
+                        Loading memory data...
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Advanced Loading Overlay -->
+        <div class="loading-overlay" id="loadingOverlay">
+            <div class="loading-spinner">
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+            </div>
+            <div class="loading-text">Processing...</div>
+        </div>
+    </div>
+
+    <!-- Hidden file input -->
+    <input type="file" id="fileInput" accept=".pdf" style="display: none;">
+
+    <script src="script.js"></script>
+</body>
+</html>
