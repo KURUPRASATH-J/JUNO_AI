@@ -1,25 +1,5 @@
-Of course. Here is a revised version of your `README.md` file, formatted to be more attractive and engaging for readers on platforms like GitHub.
-
-It includes a table of contents, badges, emojis, collapsible sections for cleaner navigation, and clearer visual separation between topics.
-
------
-
-\<div align="center"\>
 
 # JUNO AI 🤖
-
-### An advanced, conversational AI assistant with RAG, web scraping, and smart memory.
-
-\<p align="center"\>
-\<img alt="Python Version" src="[https://img.shields.io/badge/python-3.9+-blue.svg?style=for-the-badge\&logo=python\&logoColor=white](https://www.google.com/search?q=https://img.shields.io/badge/python-3.9%2B-blue.svg%3Fstyle%3Dfor-the-badge%26logo%3Dpython%26logoColor%3Dwhite)"\>
-\<img alt="Framework" src="[https://img.shields.io/badge/Flask-000000?style=for-the-badge\&logo=flask\&logoColor=white](https://www.google.com/search?q=https://img.shields.io/badge/Flask-000000%3Fstyle%3Dfor-the-badge%26logo%3Dflask%26logoColor%3Dwhite)"\>
-\<img alt="License" src="[https://img.shields.io/badge/license-MIT-green.svg?style=for-the-badge](https://www.google.com/search?q=https://img.shields.io/badge/license-MIT-green.svg%3Fstyle%3Dfor-the-badge)"\>
-\</p\>
-
-\</div\>
-
------
-
 **JUNO AI** is a powerful tool for information processing, capable of understanding and discussing uploaded PDF documents, scraping and analyzing web content, and retaining memory across conversations. Built with a robust Python Flask backend and a dynamic vanilla JavaScript front end, JUNO AI leverages Google's Gemini models and the LangChain framework for Retrieval-Augmented Generation (RAG).
 
 -----
