@@ -64,12 +64,14 @@ Code snippet
 
 # .env
 GEMINI_API_KEY="YOUR_GEMINI_API_KEY_HERE"
+
 Step 4: Run the application
 Start the Flask server.
 
 Bash
 
 python app.py
+
 Step 5: Access JUNO AI
 Open your web browser and navigate to http://localhost:7860. You should now see the JUNO AI interface!
 
