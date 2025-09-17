@@ -48,11 +48,6 @@
   * Docker (Recommended)
   * Google Gemini API Key
 
-\<br/\>
-
-\<details\>
-\<summary\>\<strong\>Option 1: Docker Deployment (Recommended)\</strong\>\</summary\>
-
 The simplest way to get started is with Docker, as it handles all system dependencies like Tesseract automatically.
 
 1.  **Clone the Repository**
@@ -75,11 +70,6 @@ The simplest way to get started is with Docker, as it handles all system depende
     ```
 5.  **Access JUNO AI**
     Open your browser and navigate to `http://localhost:7860`.
-
-\</details\>
-
-\<details\>
-\<summary\>\<strong\>Option 2: Local Python Installation\</strong\>\</summary\>
 
 1.  **Clone the Repository**
     ```bash
@@ -106,8 +96,6 @@ The simplest way to get started is with Docker, as it handles all system depende
     ```
 6.  **Access JUNO AI**
     Open your browser and navigate to `http://localhost:7860`.
-
-\</details\>
 
 -----
 
